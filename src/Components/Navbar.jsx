@@ -1,8 +1,22 @@
 
 
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthPovider/AuthPovider";
+import { useContext } from "react";
+
+
+
+
 const Navbar = () => {
+
+  const{user,signOutUser,setLoading}=useContext(AuthContext)
+  const handleLogout=()=>{
+    signOutUser()
+    setLoading(false)
+  }
+
     return (
-        <div>
+        <div >
             <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
@@ -22,39 +36,50 @@ const Navbar = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[50] mt-3 w-52 p-2 shadow">
+        <li><NavLink to={'/'}>Home</NavLink></li>
+      <li><NavLink to={'/allProduct'}>All Equipment</NavLink></li>
+      <li><NavLink to={'/addProduct'}>Add Equipment</NavLink></li>
+      <li><NavLink to={`/myProduct`}>My Equipment</NavLink></li>
+
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost font-bold text-3xl "><span className="text-primary">K</span>Null</a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
+    <ul className="menu menu-horizontal px-1 text-md font-bold text-gray-400">
+      <li><NavLink to={'/'}  >Home</NavLink></li>
+      <li><NavLink to={'/allProduct'}>All Equipment</NavLink></li>
+      <li><NavLink to={'/addProduct'}>Add Equipment</NavLink></li>
+      <li><NavLink to={`/myProduct`} >My Equipment</NavLink></li>
+
+      
+     
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
+  <div className="navbar-end space-x-2 z-50 ">
+  <a  data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName} >
+      {
+        user?.email && <img src={user?.photoURL} alt="" className="w-10 h-10 rounded-full" />
+      }
+      
+      
+    </a>
+ 
+    
+    {
+      user?.email ?<button onClick={handleLogout} className="btn btn-sm bg-primary text-md font-bold rounded-full"> Logout</button>:<div className="join  ">
+        <Link to={'/login'} className="btn btn-sm join-item bg-primary text-md font-bold rounded-full">Login</Link> 
+        <Link to={'/register'} className="btn btn-sm join-item   bg-primary text-md font-bold rounded-full">Register</Link> 
+        
+      </div>
+    }
+
+  
+    
   </div>
 </div>
+
             
         </div>
     );
