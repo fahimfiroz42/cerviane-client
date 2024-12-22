@@ -24,7 +24,7 @@ const MyQueries = () => {
       <Link to={'/addQueries'}><button className="btn bg-primary text-white text-xl hover:bg-secondary hover:text-black">ADD QUEREY</button></Link>
     </div>
   </div>
-</div>
+           </div>
 
 
             </div>
