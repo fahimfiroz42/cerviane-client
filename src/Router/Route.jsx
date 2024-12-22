@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AddQueries from "../Pages/AddQueries";
 import MyQueries from "../Pages/MyQueries";
+import QuerieDetails from "../Pages/QuerieDetails";
 
 
 
@@ -42,6 +43,10 @@ const Route =createBrowserRouter([
        {
         path:'/myQueries',
         element:<MyQueries/>
+       },
+       {
+        path:'/queryDetails',
+        element:<QuerieDetails/>
        }
     
     

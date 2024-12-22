@@ -9,7 +9,7 @@ const fakeData = {
   boycottingReason: "The product is made with non-recyclable materials."
 };
 
-function MyQueriesCard() {
+const MyQueriesCard=()=> {
   return (
     <div className="w-full  p-6 bg-secondary shadow-lg rounded-lg border border-light hover:shadow-xl transition-shadow">
       <div className="mb-4">
