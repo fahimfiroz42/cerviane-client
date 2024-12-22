@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import MyQueriesCard from "../Components/MyQueriesCard";
 import { useContext, useEffect, useState } from "react";
-import { use } from "react";
+
 import axios from "axios";
 import { AuthContext } from "../AuthPovider/AuthPovider";
 

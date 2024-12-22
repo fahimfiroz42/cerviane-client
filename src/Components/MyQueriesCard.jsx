@@ -1,11 +1,48 @@
 
+import axios from "axios";
 import { FaEye, FaEdit, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const MyQueriesCard=( {query})=> {
 
     const {_id,productName,productBrand,productImageURL,queryTitle,boycottingReason}=query ||{};
+
+    
+    const handleDelete = async (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              
+
+            axios.delete(`http://localhost:5000/delete-query/${id}`)
+            .then(res=>{if(res.data.deletedCount>0){
+                Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+              
+
+            }})
+            }
+          });
+            
+
+
+
+
+    }
+
+
   return (
     <div className="w-full  p-6 bg-secondary shadow-lg rounded-lg border border-light hover:shadow-xl transition-shadow">
       <div className="mb-4">
@@ -25,7 +62,7 @@ const MyQueriesCard=( {query})=> {
 
       <div className="mb-4">
         <p className="text-md text-gray-800 font-semibold mb-2">{queryTitle}</p>
-        <p className="text-sm text-gray-600">Reason:{boycottingReason}</p>
+        <p className="text-sm text-gray-600">Reason:{boycottingReason.slice(0, 30)}....</p>
       </div>
 
       <div className="flex justify-around items-center mt-4 space-x-3">
@@ -39,13 +76,16 @@ const MyQueriesCard=( {query})=> {
         
         </Link>
 
-        <button
+         <Link to={`/updateQuery/${_id}`}>
+         <button
           className="flex items-center gap-2 bg-light text-dark px-4 py-2 rounded-md hover:bg-primary hover:text-secondary focus:outline-none focus:ring-2 focus:ring-light transition-colors"
         >
           <FaEdit /> Update
         </button>
+         
+         </Link>
 
-        <button
+        <button  onClick={() => handleDelete(_id)}
           className="flex items-center gap-2 bg-red-500 text-secondary px-4 py-2 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-light transition-colors"
         >
           <FaTrashAlt /> Delete
