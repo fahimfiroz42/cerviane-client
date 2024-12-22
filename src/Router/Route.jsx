@@ -11,6 +11,8 @@ import AddQueries from "../Pages/AddQueries";
 import MyQueries from "../Pages/MyQueries";
 import QuerieDetails from "../Pages/QuerieDetails";
 import MyRecommendation from "../Pages/MyRecommendation";
+import RecommendationForMe from "../Pages/RecommendationForMe";
+import AllQueries from "../Pages/AllQueries";
 
 
 
@@ -37,6 +39,10 @@ const Route =createBrowserRouter([
 
        },
        {
+        path:'/allQueries',
+        element:<AllQueries/>
+       },
+       {
         path:'/addQueries',
         element:<AddQueries/>
 
@@ -52,6 +58,10 @@ const Route =createBrowserRouter([
        {
         path:'/myRecommendation',
         element:<MyRecommendation/>
+       },
+       {
+        path:'/otherRecommendation',
+        element:<RecommendationForMe/>
        }
     
     
