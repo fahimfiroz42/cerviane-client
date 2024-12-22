@@ -8,6 +8,7 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AddQueries from "../Pages/AddQueries";
+import MyQueries from "../Pages/MyQueries";
 
 
 
@@ -37,6 +38,10 @@ const Route =createBrowserRouter([
         path:'/addQueries',
         element:<AddQueries/>
 
+       },
+       {
+        path:'/myQueries',
+        element:<MyQueries/>
        }
     
     
