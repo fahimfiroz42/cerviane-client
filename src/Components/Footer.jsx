@@ -1,19 +1,20 @@
-
+import logo from '../../public/question.png'
 
 
 const Footer = () => {
     return (
-        <div className="bg-secondary dark:bg-slate-800">
-            <footer className="footer bg-secondary dark:bg-slate-800 w-11/12 mx-auto  p-10">
+        <div className="bg-secondary">
+            <footer className="footer bg-secondary w-11/12 mx-auto  p-10">
   <aside>
     
-    <p className="font-semibold text-xl">
-      Knull Solutions Ltd.
+    <p className="font-bold text-xl">
+      <span className="text-primary ">PROD</span>ASK
       <br />
-      Providing counseling since 2016
+      <img src={logo} alt="" className="w-10 h-10"/>
+      <span className='text-gray-500 text-lg'>We make your online life easier</span>
 
     </p>
-    <h6 className="footer-title opacity-100 text-black    ">Social</h6>
+    <h6 className="footer-title opacity-100 text-black">Social Link</h6>
     <div className="grid grid-flow-col gap-4">
       <a>
         <svg
@@ -72,7 +73,7 @@ const Footer = () => {
   </nav>
 </footer>
 
-<footer className="footer footer-center bg-secondary dark:bg-slate-800 text-base-content p-4">
+<footer className="footer footer-center bg-secondary  text-base-content p-4">
   <aside>
     <p>Copyright © {new Date().getFullYear()} - All right reserved by KNULL Industries Ltd</p>
   </aside>

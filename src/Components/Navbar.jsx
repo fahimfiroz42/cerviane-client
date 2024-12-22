@@ -3,6 +3,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthPovider/AuthPovider";
 import { useContext } from "react";
+import logo from '../../public/question.png'
 
 
 
@@ -44,7 +45,9 @@ const Navbar = () => {
 
       </ul>
     </div>
-    <a className="btn btn-ghost font-bold text-3xl "><span className="text-primary">K</span>Null</a>
+    <p className="font-bold text-2xl "><span className="text-primary">PROD</span>ASK</p>
+    
+    <img src={logo} alt="" className="w-10 h-10" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-md font-bold text-gray-400">

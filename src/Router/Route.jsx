@@ -7,6 +7,7 @@ import MainLayout from "../MainLayout/MainLayout";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import AddQueries from "../Pages/AddQueries";
 
 
 
@@ -30,6 +31,11 @@ const Route =createBrowserRouter([
        {
         path:'/register',
         element:<Register/>
+
+       },
+       {
+        path:'/addQueries',
+        element:<AddQueries/>
 
        }
     
