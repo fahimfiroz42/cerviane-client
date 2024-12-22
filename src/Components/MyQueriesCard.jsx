@@ -1,43 +1,43 @@
 
 import { FaEye, FaEdit, FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const fakeData = {
-  productName: "Eco-Friendly Water Bottle",
-  productBrand: "GreenLife",
-  productImageURL: "https://i.ibb.co.com/8546Bb4/6-Amazing-Pieces-of-High-Visibility-Cycling-Gear.jpg",
-  queryTitle: "Is there a better alternative to this product?",
-  boycottingReason: "The product is made with non-recyclable materials."
-};
 
-const MyQueriesCard=()=> {
+const MyQueriesCard=( {query})=> {
+
+    const {_id,productName,productBrand,productImageURL,queryTitle,boycottingReason}=query ||{};
   return (
     <div className="w-full  p-6 bg-secondary shadow-lg rounded-lg border border-light hover:shadow-xl transition-shadow">
       <div className="mb-4">
-        <h2 className="text-2xl font-bold text-dark mb-1">{fakeData.productName}</h2>
-        <p className="text-md text-gray-700">Brand: <span className="text-dark font-medium">{fakeData.productBrand}</span></p>
+        <h2 className="text-2xl font-bold text-dark mb-1">{productName}</h2>
+        <p className="text-md text-gray-700">Brand: <span className="text-dark font-medium">{productBrand}</span></p>
       </div>
 
-      {fakeData.productImageURL && (
+      {productImageURL && (
         <div className="mb-4">
           <img
-            src={fakeData.productImageURL}
-            alt={fakeData.productName}
+            src={productImageURL}
+            alt={productName}
             className="w-full h-56 object-cover rounded-lg shadow-sm"
           />
         </div>
       )}
 
       <div className="mb-4">
-        <p className="text-md text-gray-800 font-semibold mb-2">{fakeData.queryTitle}</p>
-        <p className="text-sm text-gray-600">Reason: {fakeData.boycottingReason}</p>
+        <p className="text-md text-gray-800 font-semibold mb-2">{queryTitle}</p>
+        <p className="text-sm text-gray-600">Reason:{boycottingReason}</p>
       </div>
 
       <div className="flex justify-around items-center mt-4 space-x-3">
-        <button
+        <Link to={`/queryDetails/${_id}`}>
+        
+        <button 
           className="flex items-center gap-2 bg-primary text-secondary px-4 py-2 rounded-md hover:bg-dark focus:outline-none focus:ring-2 focus:ring-light transition-colors"
         >
           <FaEye /> Details
         </button>
+        
+        </Link>
 
         <button
           className="flex items-center gap-2 bg-light text-dark px-4 py-2 rounded-md hover:bg-primary hover:text-secondary focus:outline-none focus:ring-2 focus:ring-light transition-colors"

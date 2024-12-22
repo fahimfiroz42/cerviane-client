@@ -1,8 +1,26 @@
+import { useParams } from "react-router-dom";
 import RecommandationComment from "../Components/RecommandationComment";
 import RecommendationForm from "../Components/Recommendationform";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 const QuerieDetails = () => {
+
+    const {id}=useParams()
+
+    const [myQueries, setMyQueries] = useState({});
+
+    useEffect(() => {
+     fetchdata()
+    }, [id])
+ 
+    const fetchdata=async()=>{
+     const {data}=await axios.get(`http://localhost:5000/all-querie/${id}`) 
+     setMyQueries(data)
+     console.log(data);
+ 
+    }
     const {
         boycottingReason,
         date,
@@ -12,7 +30,7 @@ const QuerieDetails = () => {
         queryTitle,
         recommendationCount,
         time,
-      } = data;
+      } = myQueries ||{};
     
       return (
        <div className="">
@@ -21,7 +39,7 @@ const QuerieDetails = () => {
           <img
             src={productImageURL}
             alt={productName}
-            className="w-full h-96 object-cover"
+            className="w-full h-96 object-contain"
           />
           <div className="p-4">
             <h2 className="text-lg font-semibold text-gray-800">{queryTitle}</h2>
@@ -64,13 +82,3 @@ const QuerieDetails = () => {
 
 export default QuerieDetails;
 
-const data = {
-    boycottingReason: "Dolorum deleniti har",
-    date: "22-12-2024",
-    productBrand: "Dolorum pariatur Do",
-    productImageURL: "https://i.ibb.co.com/8546Bb4/6-Amazing-Pieces-of-High-Visibility-Cycling-Gear.jpg",
-    productName: "Lysandra Crawford",
-    queryTitle: "Ea velit assumenda",
-    recommendationCount: 0,
-    time: "12:37:38",
-  };

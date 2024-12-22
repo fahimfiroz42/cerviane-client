@@ -1,8 +1,36 @@
 import { Link } from "react-router-dom";
 import MyQueriesCard from "../Components/MyQueriesCard";
+import { useContext, useEffect, useState } from "react";
+import { use } from "react";
+import axios from "axios";
+import { AuthContext } from "../AuthPovider/AuthPovider";
+
 
 
 const MyQueries = () => {
+   const {user}=useContext(AuthContext)
+   const [myQueries, setMyQueries] = useState([]);
+
+   useEffect(() => {
+    fetchdata()
+   }, [user?.email])
+
+   const fetchdata=async()=>{
+    const {data}=await axios.get(`http://localhost:5000/all-queries/${user?.email}`) 
+    setMyQueries(data)
+    console.log(data);
+
+   }
+  console.log(myQueries);
+
+
+ 
+
+
+
+
+
+
     return (
         <div >
           
@@ -36,12 +64,11 @@ const MyQueries = () => {
 
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-20 w-11/12 mx-auto">
 
-           <MyQueriesCard/>
-           <MyQueriesCard/>
-           <MyQueriesCard/>
-           <MyQueriesCard/>
-           <MyQueriesCard/>
-           <MyQueriesCard/>
+           {
+            myQueries.map((query)=><MyQueriesCard key={query._id} query={query}></MyQueriesCard>)
+           }
+
+          
 
            </div>
             

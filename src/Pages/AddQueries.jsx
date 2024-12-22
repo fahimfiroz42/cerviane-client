@@ -3,6 +3,8 @@ import { AuthContext } from "../AuthPovider/AuthPovider";
 import { format} from "date-fns";
 import Lottie from "lottie-react";
 import ques from '../assets/ques.json'
+import axios from "axios";
+import Swal from "sweetalert2";
 
 
 
@@ -39,6 +41,18 @@ const AddQueries = ()=> {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data Submitted:", formData);
+
+    axios.post('http://localhost:5000/add-query', formData)
+    .then(res => {
+        if(res.data.insertedId){
+            Swal.fire({
+                title: 'Query Added Successfully',
+                text: 'Your Query has been added successfully',
+                icon: 'success',
+                confirmButtonText: 'ok'
+              })
+        }
+    })
     // Handle the form submission logic (e.g., API call)
   };
 

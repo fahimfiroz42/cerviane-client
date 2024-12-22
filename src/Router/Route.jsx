@@ -52,7 +52,7 @@ const Route =createBrowserRouter([
         element:<MyQueries/>
        },
        {
-        path:'/queryDetails',
+        path:'/queryDetails/:id',
         element:<QuerieDetails/>
        },
        {
