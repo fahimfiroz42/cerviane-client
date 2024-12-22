@@ -10,6 +10,7 @@ import Register from "../Pages/Register";
 import AddQueries from "../Pages/AddQueries";
 import MyQueries from "../Pages/MyQueries";
 import QuerieDetails from "../Pages/QuerieDetails";
+import MyRecommendation from "../Pages/MyRecommendation";
 
 
 
@@ -47,6 +48,10 @@ const Route =createBrowserRouter([
        {
         path:'/queryDetails',
         element:<QuerieDetails/>
+       },
+       {
+        path:'/myRecommendation',
+        element:<MyRecommendation/>
        }
     
     
