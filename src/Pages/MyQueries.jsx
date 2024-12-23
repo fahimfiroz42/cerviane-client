@@ -18,11 +18,10 @@ const MyQueries = () => {
    const fetchdata=async()=>{
     const {data}=await axios.get(`http://localhost:5000/all-queries/${user?.email}`) 
     setMyQueries(data)
-    console.log(data);
+   
 
    }
-  console.log(myQueries);
-
+ 
 
  
 

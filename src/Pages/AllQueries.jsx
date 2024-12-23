@@ -1,13 +1,34 @@
 import AllQueriesCard from "../Components/AllQueriesCard";
 import { TbLayoutGridFilled } from "react-icons/tb";
 import { RiLayoutGrid2Fill } from "react-icons/ri";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 
 const AllQueries = () => {
     const [gridLayout, setGridLayout] = useState(3);
-    console.log(gridLayout);
+
+    const [myQueries, setMyQueries] = useState([]);
+
+   useEffect(() => {
+    fetchdata()
+   }, [])
+
+   const fetchdata=async()=>{
+    const {data}=await axios.get('http://localhost:5000/all-queries') 
+    setMyQueries(data)
+   
+
+   }
+  
+
+
+
+
+
+
+   
 
     
 
@@ -65,12 +86,10 @@ const AllQueries = () => {
 
 
             <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 my-20 ${gridLayout === 2 ? 'lg:grid-cols-2' : 'lg:grid-cols-3'}`}>
-                <AllQueriesCard/>
-                <AllQueriesCard/>
-                <AllQueriesCard/>
-                <AllQueriesCard/>
-                <AllQueriesCard/>
-                <AllQueriesCard/>
+                
+                    {myQueries.map(query => <AllQueriesCard key={query._id} query={query} />)}
+                
+                
             </div>
             
         </div>

@@ -3,40 +3,32 @@ import React from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const AllQueriesCard = () => {
+const AllQueriesCard = ({query}) => {
 
-    const fakeProductData = {
-        productName: "Ergonomic Chair",
-        productBrand: "ComfortCo",
-        productImageUrl: "https://via.placeholder.com/150",
-        queryTitle: "Is there any better chair that provides excellent lumbar support?",
-        boycottingReason: "Poor quality materials used, not durable enough for long-term use.",
-        userName: "John Doe",
-        userProfileImage: "https://via.placeholder.com/50",
-        currentDateTime: "2024-12-22 12:30:00",
-        recommendationCount: 5
-      };
   const { 
+    _id,
     productName, 
     productBrand, 
-    productImageUrl, 
+    productImageURL, 
     queryTitle, 
     boycottingReason, 
-    userName, 
-    userProfileImage, 
-    currentDateTime, 
+    querier,
+    date,
     recommendationCount 
-  } = fakeProductData;
-
+  } = query || {};
+console.log(productImageURL);
   return (
     <div className=" bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-4">
       {/* Full-Width Product Image */}
       <div className="w-full h-60">
+       {productImageURL &&
         <img 
-          src={productImageUrl} 
-          alt={productName} 
-          className="w-full h-full object-cover rounded-md" 
-        />
+        src={productImageURL} 
+        alt={productName} 
+        className="w-full h-full object-cover rounded-md" 
+      />
+       
+       }
       </div>
 
       {/* Product Info */}
@@ -60,20 +52,20 @@ const AllQueriesCard = () => {
       {/* User Info */}
       <div className="flex items-center space-x-4">
         <img 
-          src={userProfileImage} 
-          alt={userName} 
+          src={querier?.photo} 
+          alt={querier?.name} 
           className="w-12 h-12 object-cover rounded-full border border-gray-300" 
         />
         <div>
-          <p className="text-sm font-semibold text-dark">{userName}</p>
-          <p className="text-xs text-gray-500">{currentDateTime}</p>
+          <p className="text-sm font-semibold text-dark">{querier?.name}</p>
+          <p className="text-xs text-gray-500">{date}  </p>
         </div>
       </div>
 
       {/* Recommendation Count & Recommend Button */}
       <div className="flex justify-between items-center">
         <p className="text-sm text-gray-500">Recommendations: {recommendationCount}</p>
-       <Link to={'/queryDetails'}>
+       <Link to={`/queryDetails/${_id}`}>
        <button className="bg-primary text-white py-2 px-4 rounded-md flex items-center hover:bg-dark">
           <FaThumbsUp className="mr-2" /> Recommend
         </button>
