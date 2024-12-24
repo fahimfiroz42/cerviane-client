@@ -10,17 +10,23 @@ const QuerieDetails = () => {
     const {id}=useParams()
 
     const [myQueries, setMyQueries] = useState({});
+    const [recommendations, setRecommendations] = useState([]);
 
     useEffect(() => {
      fetchdata()
+     fetchrecommendation()
     }, [id])
  
     const fetchdata=async()=>{
      const {data}=await axios.get(`http://localhost:5000/all-querie/${id}`) 
      setMyQueries(data)
-     console.log(data);
- 
     }
+
+    const fetchrecommendation=async()=>{
+        const {data}=await axios.get(`http://localhost:5000/all-recommendation-query/${id}`)
+        setRecommendations(data)
+    }
+
     const {
         boycottingReason,
         date,
@@ -70,11 +76,11 @@ const QuerieDetails = () => {
 </div>
 
 <div>
-    <RecommendationForm/>
+    <RecommendationForm  query={myQueries}   />
 </div>
 
 <div>
-    <RecommandationComment/>
+    <RecommandationComment recommendations={recommendations}/>
 </div>
        </div>
       );

@@ -1,27 +1,23 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../AuthPovider/AuthPovider";
+import axios from "axios";
 
 
 const RecommendationForMe = () => {
-      const [recommendations, setRecommendations] = useState([
-    {
-      id: 1,
-      imageUrl: "https://via.placeholder.com/150",
-      productName: "Ergonomic Steel Chair",
-      date: "22-12-2024",
-      reason:
-        "This chair has excellent lumbar support and a sleek design, making it perfect for long hours of work.",
-      recommendationTitle: "Best Chair for Office Use",
-    },
-    {
-      id: 2,
-      imageUrl: "https://via.placeholder.com/150",
-      productName: "Wireless Headphones",
-      date: "20-12-2024",
-      reason:
-        "These headphones provide superb noise cancellation and a comfortable fit.",
-      recommendationTitle: "Top Noise-Cancelling Headphones",
-    },
-  ]);
+      const [recommendations, setRecommendations] = useState([]);
+      const {user}=useContext(AuthContext)
+      
+    
+      useEffect(() => {
+       fetchdata()
+      }, [user?.email])
+    
+      const fetchdata=async()=>{
+       const {data}=await axios.get(`http://localhost:5000/all-recommendation-other/${user?.email}`) 
+       setRecommendations(data)
+      }
+     
+    
 
   // Function to delete a recommendation by id
   const handleDelete = (id) => {
@@ -52,17 +48,17 @@ const RecommendationForMe = () => {
             <tr key={recommendation.id} className="border-b">
               <td className="px-4 py-2">
                 <img
-                  src={recommendation.imageUrl}
-                  alt={recommendation.productName}
+                  src={recommendation.productImage}
+                  alt={recommendation.recommendationProductName}
                   className="w-16 h-16 object-cover rounded-md"
                 />
               </td>
-              <td className="px-4 py-2">{recommendation.productName}</td>
+              <td className="px-4 py-2">{recommendation.recommendationProductName}</td>
               <td className="px-4 py-2">{recommendation.date}</td>
               <td className="px-4 py-2">{recommendation.recommendationTitle}</td>
               <td className="px-4 py-2">
                 <button
-                  onClick={() => handleDelete(recommendation.id)}
+                  onClick={() => handleDelete(recommendation._id)}
                   className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600"
                 >
                   Delete

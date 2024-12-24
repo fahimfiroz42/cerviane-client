@@ -1,7 +1,10 @@
 import CommentCard from "./CommentCard";
 
 
-const RecommandationComment = () => {
+const RecommandationComment = ({recommendations}) => {
+
+ 
+
     return (
         <div>
             <div className="text-center my-10">
@@ -15,7 +18,12 @@ const RecommandationComment = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-11/12 mx-auto mb-20">
-                <CommentCard/>
+
+              {
+                recommendations.map(recommendation=><CommentCard key={recommendation._id} recommendation={recommendation}></CommentCard>)
+              }
+
+                <CommentCard />
                 <CommentCard/>
                 <CommentCard/>
                 <CommentCard/>

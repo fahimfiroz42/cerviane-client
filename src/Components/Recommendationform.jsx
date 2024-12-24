@@ -1,27 +1,65 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../AuthPovider/AuthPovider";
+import { format } from "date-fns";
+import axios from "axios";
+import Swal from "sweetalert2";
 
-const RecommendationForm = () => {
-  const [formData, setFormData] = useState({
-    recommendationTitle: "",
-    productName: "",
-    productImage: "",
-    recommendationReason: "",
-  });
+const RecommendationForm = ({query} ) => {
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+    const {user}=useContext(AuthContext)
+    const {
+        _id,
+        productName,
+        queryTitle,
+        querier
+      } = query ||{}
+ 
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitted Recommendation:", formData);
-    setFormData({
-      recommendationTitle: "",
-      productName: "",
-      productImage: "",
-      recommendationReason: "",
-    });
+   const form = e.target;
+    const recommendationTitle = form.recommendationTitle.value;
+    const recommendationProductName = form.recommendationProductName.value;
+    const productImage = form.productImage.value;
+    const recommendationReason = form.recommendationReason.value;
+   
+    const formData = {
+      recommendationTitle,
+      recommendationProductName,
+      productImage,
+      recommendationReason,
+      queryId:_id,
+      queryTitle:queryTitle,
+    productName:productName,
+    querierEmail:querier?.email,
+    querierName:querier?.name,
+    RecommenderEmail:user?.email,
+    RecommenderName:user?.displayName,
+    date:format(new Date(), 'dd-MM-yyyy')
+
+    }
+
+
+    try {
+        axios.post('http://localhost:5000/add-recommendation', formData)
+        .then(res=>{
+            if(res.data.insertedId){
+                Swal.fire({
+                    title: 'Recommendation Added Successfully',
+                    text: 'Your Recommendation has been added successfully',
+                    icon: 'success',
+                    confirmButtonText: 'ok'
+                  })
+                }
+            }
+    )
+    } catch (error) {
+        console.log(error);
+
+        
+    }
+    
   };
 
   return (
@@ -49,8 +87,7 @@ const RecommendationForm = () => {
             type="text"
             id="recommendationTitle"
             name="recommendationTitle"
-            value={formData.recommendationTitle}
-            onChange={handleChange}
+           
             placeholder="Enter recommendation title"
             className="mt-1 block w-full border-light rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
           />
@@ -66,10 +103,9 @@ const RecommendationForm = () => {
           </label>
           <input
             type="text"
-            id="productName"
-            name="productName"
-            value={formData.productName}
-            onChange={handleChange}
+            id="recommendationProductName"
+            name="recommendationProductName"
+            
             placeholder="Enter product name"
             className="mt-1 block w-full border-light rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
           />
@@ -87,8 +123,7 @@ const RecommendationForm = () => {
             type="url"
             id="productImage"
             name="productImage"
-            value={formData.productImage}
-            onChange={handleChange}
+            
             placeholder="Enter product image URL"
             className="mt-1 block w-full border-light rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
           />
@@ -105,8 +140,7 @@ const RecommendationForm = () => {
           <textarea
             id="recommendationReason"
             name="recommendationReason"
-            value={formData.recommendationReason}
-            onChange={handleChange}
+       
             placeholder="Enter the reason for your recommendation"
             className="mt-1 block w-full border-light rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
           ></textarea>

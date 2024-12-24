@@ -40,7 +40,7 @@ const AddQueries = ()=> {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data Submitted:", formData);
+    
 
     axios.post('http://localhost:5000/add-query', formData)
     .then(res => {
