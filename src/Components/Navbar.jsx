@@ -72,9 +72,9 @@ const Navbar = () => {
  
     
     {
-      user?.email ?<button onClick={handleLogout} className="btn btn-sm bg-primary text-md font-bold rounded-full"> Logout</button>:<div className="join  ">
-        <Link to={'/login'} className="btn btn-sm join-item bg-primary text-md font-bold rounded-full">Login</Link> 
-        <Link to={'/register'} className="btn btn-sm join-item   bg-primary text-md font-bold rounded-full">Register</Link> 
+      user?.email ?<button onClick={handleLogout} className="btn btn-sm bg-primary text-md text-white font-bold rounded-full"> Logout</button>:<div className="join  ">
+        <Link to={'/login'} className="btn btn-sm join-item bg-primary text-md font-bold text-white rounded-full">Login</Link> 
+        <Link to={'/register'} className="btn btn-sm join-item   bg-primary text-white text-md font-bold rounded-full">Register</Link> 
         
       </div>
     }

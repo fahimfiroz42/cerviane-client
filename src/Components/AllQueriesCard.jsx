@@ -1,5 +1,5 @@
 
-import React from 'react';
+
 import { FaThumbsUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -25,23 +25,23 @@ console.log(productImageURL);
         <img 
         src={productImageURL} 
         alt={productName} 
-        className="w-full h-full object-cover rounded-md" 
+        className="w-full h-full object-contain rounded-md hover:scale-110 transition-transform duration-300" 
       />
        
        }
       </div>
 
       {/* Product Info */}
-      <div className="flex items-center space-x-4">
-        <div>
+      
+        <div className='flex items-center justify-between '>
           <h2 className="text-xl font-semibold text-dark">{productName}</h2>
-          <p className="text-sm text-gray-500">{productBrand}</p>
+          <p className="text-sm text-gray-500 badge bg-primary/20">{productBrand}</p>
         </div>
-      </div>
+      
 
       {/* Query Title */}
       <div>
-        <h3 className="text-md font-medium text-primary">{queryTitle}</h3>
+        <h3 className="text-md font-semibold text-primary">{queryTitle}</h3>
       </div>
 
       {/* Boycotting Reason */}
@@ -54,7 +54,7 @@ console.log(productImageURL);
         <img 
           src={querier?.photo} 
           alt={querier?.name} 
-          className="w-12 h-12 object-cover rounded-full border border-gray-300" 
+          className="w-12 h-12 object-cover rounded-full border border-gray-300 " 
         />
         <div>
           <p className="text-sm font-semibold text-dark">{querier?.name}</p>
@@ -64,7 +64,7 @@ console.log(productImageURL);
 
       {/* Recommendation Count & Recommend Button */}
       <div className="flex justify-between items-center">
-        <p className="text-sm text-gray-500">Recommendations: {recommendationCount}</p>
+        <p className="text-sm text-gray-500">Recommendations: <span className='badge bg-primary/20 font-bold'>{recommendationCount}</span></p>
        <Link to={`/queryDetails/${_id}`}>
        <button className="bg-primary text-white py-2 px-4 rounded-md flex items-center hover:bg-dark">
           <FaThumbsUp className="mr-2" /> Recommend

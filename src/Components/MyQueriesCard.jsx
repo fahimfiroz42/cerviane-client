@@ -44,7 +44,7 @@ const MyQueriesCard=( {query})=> {
 
 
   return (
-    <div className="w-full  p-6 bg-secondary shadow-lg rounded-lg border border-light hover:shadow-xl transition-shadow">
+    <div className="w-full  p-6  shadow-lg rounded-lg border border-light hover:shadow-xl transition-shadow">
       <div className="mb-4">
         <h2 className="text-2xl font-bold text-dark mb-1">{productName}</h2>
         <p className="text-md text-gray-700">Brand: <span className="text-dark font-medium">{productBrand}</span></p>
@@ -55,7 +55,7 @@ const MyQueriesCard=( {query})=> {
           <img
             src={productImageURL}
             alt={productName}
-            className="w-full h-56 object-cover rounded-lg shadow-sm"
+            className="w-full h-56 object-contain rounded-lg"
           />
         </div>
       )}

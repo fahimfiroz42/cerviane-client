@@ -57,7 +57,7 @@ const AuthContextProvider = ({children}) => {
         const unsubscribe=onAuthStateChanged(auth,currentUser=>{
             if(currentUser){
                 setUser(currentUser)
-                axios.post('http://localhost:5000/jwt',currentUser.email,{withCredentials:true})
+                axios.post('http://localhost:5000/jwt',currentUser?.email,{withCredentials:true})
                 .then(res=>console.log(res.data))
 
                 setLoading(false)

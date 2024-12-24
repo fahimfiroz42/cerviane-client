@@ -5,13 +5,14 @@ import Lottie from "lottie-react";
 import ques from '../assets/ques.json'
 import axios from "axios";
 import Swal from "sweetalert2";
+import useAxios from "../Hooks/useAxios";
 
 
 
 const AddQueries = ()=> {
 
     const {user}=useContext(AuthContext)
-   
+    const axiosSecurity=useAxios()   
   const [formData, setFormData] = useState({
     productName: "",
     productBrand: "",
@@ -42,7 +43,7 @@ const AddQueries = ()=> {
     e.preventDefault();
     
 
-    axios.post('http://localhost:5000/add-query', formData)
+    axiosSecurity.post('/add-query', formData)
     .then(res => {
         if(res.data.insertedId){
             Swal.fire({

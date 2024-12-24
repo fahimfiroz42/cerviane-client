@@ -11,12 +11,14 @@ const AllQueries = () => {
 
     const [myQueries, setMyQueries] = useState([]);
 
+    const [search, setSearch] = useState('');
+
    useEffect(() => {
     fetchdata()
-   }, [])
+   }, [ search])
 
    const fetchdata=async()=>{
-    const {data}=await axios.get('http://localhost:5000/all-queries') 
+    const {data}=await axios.get(`http://localhost:5000/all-queries?search=${search}`) 
     setMyQueries(data)
    
 
@@ -66,7 +68,7 @@ const AllQueries = () => {
                 <div>
 
                 <label className="input input-bordered flex items-center gap-2">
-           <input type="text" className="grow" placeholder="Search" />
+           <input type="text" className="grow" placeholder="Search" onChange={(e) => setSearch(e.target.value)} />
                 <span className="btn btn-sm bg-primary text-white ">Search</span>
             </label>
                 </div>

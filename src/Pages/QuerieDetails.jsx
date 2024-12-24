@@ -3,9 +3,11 @@ import RecommandationComment from "../Components/RecommandationComment";
 import RecommendationForm from "../Components/Recommendationform";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useAxios from "../Hooks/useAxios";
 
 
 const QuerieDetails = () => {
+    const axiosSecurity=useAxios()
 
     const {id}=useParams()
 
@@ -18,12 +20,12 @@ const QuerieDetails = () => {
     }, [id])
  
     const fetchdata=async()=>{
-     const {data}=await axios.get(`http://localhost:5000/all-querie/${id}`) 
+     const {data}=await axiosSecurity.get(`/all-querie/${id}`) 
      setMyQueries(data)
     }
 
     const fetchrecommendation=async()=>{
-        const {data}=await axios.get(`http://localhost:5000/all-recommendation-query/${id}`)
+        const {data}=await axiosSecurity.get(`/all-recommendation-query/${id}`)
         setRecommendations(data)
     }
 

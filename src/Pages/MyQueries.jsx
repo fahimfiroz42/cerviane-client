@@ -4,10 +4,12 @@ import { useContext, useEffect, useState } from "react";
 
 import axios from "axios";
 import { AuthContext } from "../AuthPovider/AuthPovider";
+import useAxios from "../Hooks/useAxios";
 
 
 
 const MyQueries = () => {
+  const axiosSecurity=useAxios()
    const {user}=useContext(AuthContext)
    const [myQueries, setMyQueries] = useState([]);
 
@@ -16,7 +18,7 @@ const MyQueries = () => {
    }, [user?.email])
 
    const fetchdata=async()=>{
-    const {data}=await axios.get(`http://localhost:5000/all-queries/${user?.email}`) 
+    const {data}=await axiosSecurity.get(`/all-queries/${user?.email}`) 
     setMyQueries(data)
    
 

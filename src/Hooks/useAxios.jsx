@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../AuthPovider/AuthPovider";
 import { useNavigate } from "react-router-dom";
 
-export const axiosSecurity=axios.create({
+ const axiosSecurity=axios.create({
     baseURL:'http://localhost:5000',
     withCredentials:true,
 
