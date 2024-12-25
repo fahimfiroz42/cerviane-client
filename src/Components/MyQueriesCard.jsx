@@ -46,10 +46,10 @@ const MyQueriesCard=({query,setMyQueries,myQueries})=> {
 
 
   return (
-    <div className="w-full  p-6  shadow-lg rounded-lg border border-light hover:shadow-xl transition-shadow">
+    <div className="w-full  p-6  shadow-inner  rounded-lg  border-light hover:shadow-xl transition-shadow">
       <div className="mb-4">
         <h2 className="text-2xl font-bold text-dark mb-1">{productName}</h2>
-        <p className="text-md text-gray-700">Brand: <span className="text-dark font-medium">{productBrand}</span></p>
+        <p className="text-md text-gray-700">Brand: <span className="text-dark font-medium badge bg-primary/20">{productBrand}</span></p>
       </div>
 
       {productImageURL && (

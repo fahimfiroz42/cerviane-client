@@ -4,6 +4,7 @@ import { RiLayoutGrid2Fill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Loader from "../Components/Loader";
 
 
 const AllQueries = () => {
@@ -12,14 +13,23 @@ const AllQueries = () => {
     const [myQueries, setMyQueries] = useState([]);
 
     const [search, setSearch] = useState('');
+    const [loading, setLoading] = useState(false); 
 
    useEffect(() => {
     fetchdata()
    }, [ search])
 
    const fetchdata=async()=>{
-    const {data}=await axios.get(`https://cervinae-server.vercel.app/all-queries?search=${search}`) 
-    setMyQueries(data)
+    
+    setLoading(true); 
+    try {
+        const {data}=await axios.get(`https://cervinae-server.vercel.app/all-queries?search=${search}`) 
+      setMyQueries(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false); 
+    }
    
 
    }
@@ -36,6 +46,12 @@ const AllQueries = () => {
 
     return (
         <div className="w-11/12 mx-auto ">
+
+       {
+            loading && <div className="text-center my-10 col-span-3">
+                <Loader/></div>
+           }
+
 
 
 

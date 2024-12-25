@@ -55,7 +55,7 @@ const Route =createBrowserRouter([
        },
        {
         path:'/queryDetails/:id',
-        element:<QuerieDetails/>
+        element:<PrivateRoute> <QuerieDetails/> </PrivateRoute>
        },
        {
         path:'/myRecommendation',
