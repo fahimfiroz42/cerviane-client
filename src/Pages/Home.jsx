@@ -6,9 +6,12 @@ import CommunitySection from "../Components/Community";
 import OpinionSection from "../Components/Opinion";
 import Collaborate from "../Components/Collaborate";
 import HowCanHelp from "../Components/HowCanHelp";
+import useTitle from "../Hooks/useTitle";
 
 
 const Home = () => {
+
+    useTitle('Home')
      
       const [allQueries, setAllQueries] = useState([]);
         useEffect(() => {

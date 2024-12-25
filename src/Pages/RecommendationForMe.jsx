@@ -2,8 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthPovider/AuthPovider";
 import useAxios from "../Hooks/useAxios";
 import Loader from "../Components/Loader";
+import useTitle from "../Hooks/useTitle";
 
 const RecommendationForMe = () => {
+    useTitle('Other Recommendation')
   const axiosSecurity = useAxios();
   const [recommendations, setRecommendations] = useState([]);
   const { user } = useContext(AuthContext);

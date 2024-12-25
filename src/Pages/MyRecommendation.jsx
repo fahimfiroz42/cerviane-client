@@ -4,8 +4,10 @@ import { AuthContext } from "../AuthPovider/AuthPovider";
 import useAxios from "../Hooks/useAxios";
 import Swal from "sweetalert2";
 import Loader from "../Components/Loader";
+import useTitle from "../Hooks/useTitle";
 
 const MyRecommendation = () => {
+    useTitle('My Recommendation')
   const axiosSecurity = useAxios();
   const { user } = useContext(AuthContext);
   const [recommendations, setRecommendations] = useState([]);
@@ -16,6 +18,7 @@ const MyRecommendation = () => {
   }, [user?.email]);
 
   const fetchData = async () => {
+
     setLoading(true);
     try {
       const { data } = await axiosSecurity.get(`/all-recommendation/${user?.email}`);

@@ -5,8 +5,10 @@ import Lottie from "lottie-react";
 import ques from '../assets/ques.json';
 import Swal from "sweetalert2";
 import useAxios from "../Hooks/useAxios";
+import useTitle from "../Hooks/useTitle";
 
 const AddQueries = () => {
+  useTitle('Add Query')
   const { user } = useContext(AuthContext);
   const axiosSecurity = useAxios();
   const [formData, setFormData] = useState({

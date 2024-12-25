@@ -7,8 +7,10 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import useAxios from "../Hooks/useAxios";
 import { useParams } from "react-router-dom";
+import useTitle from "../Hooks/useTitle";
 
 const UpdateQuery = () => {
+    useTitle('Update Query')
   const { id } = useParams();
   const { user } = useContext(AuthContext);
   const axiosSecurity = useAxios();

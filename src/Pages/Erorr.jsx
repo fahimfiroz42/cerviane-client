@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import '../App.css'
+import useTitle from "../Hooks/useTitle";
 
 
 
 const Error = () => {
+    useTitle('Error')
     const navigate =useNavigate()
     return (
         <div className="bg-white min-h-[calc(100vh-100px)] justify-center">

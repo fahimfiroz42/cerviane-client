@@ -5,9 +5,11 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Loader from "../Components/Loader";
+import useTitle from "../Hooks/useTitle";
 
 
 const AllQueries = () => {
+    useTitle('All Queries')
     const [gridLayout, setGridLayout] = useState(3);
 
     const [myQueries, setMyQueries] = useState([]);

@@ -6,8 +6,10 @@ import axios from "axios";
 import { AuthContext } from "../AuthPovider/AuthPovider";
 import useAxios from "../Hooks/useAxios";
 import Loader from "../Components/Loader";
+import useTitle from "../Hooks/useTitle";
 
 const MyQueries = () => {
+    useTitle('My Queries')
   const axiosSecurity = useAxios();
   const { user } = useContext(AuthContext);
   const [myQueries, setMyQueries] = useState([]);

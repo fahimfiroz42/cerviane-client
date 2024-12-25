@@ -5,9 +5,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import useAxios from "../Hooks/useAxios";
 import { ThumbsUp, Calendar, Clock, AlertCircle } from 'lucide-react'
+import useTitle from "../Hooks/useTitle";
 
 
 const QuerieDetails = () => {
+    useTitle('Querie Details')
     const axiosSecurity=useAxios()
 
     const {id}=useParams()
