@@ -20,10 +20,12 @@ const MyQueries = () => {
    const fetchdata=async()=>{
     const {data}=await axiosSecurity.get(`/all-queries/${user?.email}`) 
     setMyQueries(data)
+
    
 
    }
- 
+   
+  
 
  
 
@@ -66,7 +68,14 @@ const MyQueries = () => {
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-20 w-11/12 mx-auto">
 
            {
-            myQueries.map((query)=><MyQueriesCard key={query._id} query={query}></MyQueriesCard>)
+            myQueries.length===0 && <div className="text-center my-10 col-span-3">
+
+                <img src="https://i.ibb.co.com/4NLYhXB/a-3d-render-of-a-banner-with-the-text-no-Il67-Fv8-SLa-Im-Ecplq-DUQ-f-DCBDB3a-RVaa4-Bj-P90s-MVA.jpg" alt="" />
+               </div>
+           }
+
+           {
+            myQueries.map((query)=><MyQueriesCard key={query._id} myQueries={myQueries} setMyQueries={setMyQueries} query={query}></MyQueriesCard>)
            }
 
           

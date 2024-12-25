@@ -62,7 +62,7 @@ const AllQueries = () => {
 
             </div>
 
-            <div className="flex justify-between items-center mt-20 ">
+            <div className="flex justify-between items-center mt-20 border border-b-4 border-b-primary/30 py-4 px-2 rounded-2xl ">
 
                 {/* search button */}
                 <div>

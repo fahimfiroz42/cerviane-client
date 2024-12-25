@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
-const MyQueriesCard=( {query})=> {
+const MyQueriesCard=({query,setMyQueries,myQueries})=> {
 
     const {_id,productName,productBrand,productImageURL,queryTitle,boycottingReason}=query ||{};
 
@@ -30,14 +30,16 @@ const MyQueriesCard=( {query})=> {
                 text: "Your file has been deleted.",
                 icon: "success"
               });
+
+              const filteredQueries = myQueries.filter((query) => query._id !== id);      
+              setMyQueries(filteredQueries);
               
 
             }})
             }
           });
-            
 
-
+       
 
 
     }

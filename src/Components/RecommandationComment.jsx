@@ -23,10 +23,7 @@ const RecommandationComment = ({recommendations}) => {
                 recommendations.map(recommendation=><CommentCard key={recommendation._id} recommendation={recommendation}></CommentCard>)
               }
 
-                <CommentCard />
-                <CommentCard/>
-                <CommentCard/>
-                <CommentCard/>
+            
             </div>
             
         </div>

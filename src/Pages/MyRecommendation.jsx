@@ -34,22 +34,24 @@ const MyRecommendation = () => {
         if (result.isConfirmed) {
           
 
-        axios.delete(`http://localhost:5000/delete-query/${id}`)
+        axios.delete(`http://localhost:5000/delete-recommendation/${id}`)
         .then(res=>{if(res.data.deletedCount>0){
             Swal.fire({
             title: "Deleted!",
             text: "Your file has been deleted.",
             icon: "success"
           });
-          
+           
+          const filteredRecommendations = recommendations.filter(
+            (recommendation) => recommendation.id !== id
+          );
+          setRecommendations(filteredRecommendations);
+          console.log(filteredRecommendations);
 
         }})
         }
       })
-    const filteredRecommendations = recommendations.filter(
-      (recommendation) => recommendation.id !== id
-    );
-    setRecommendations(filteredRecommendations);
+   
   };
 
   return (
@@ -78,7 +80,7 @@ const MyRecommendation = () => {
         </div>
 
 <div className="container mx-auto p-6 bg-secondary rounded-lg shadow-md border border-gray-200">
-      <h2 className="text-2xl font-semibold text-dark mb-4">Recommendations</h2>
+      <h2 className="text-2xl font-semibold text-dark mb-4">Recommendations <span className="badge bg-primary/30">{recommendations.length}</span></h2>
       <table className="w-full table-auto">
         <thead>
           <tr>

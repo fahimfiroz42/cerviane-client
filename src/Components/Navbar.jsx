@@ -51,11 +51,25 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-md font-bold text-gray-400">
-      <li><NavLink to={'/'}  >Home</NavLink></li>
-      <li><NavLink to={'/allQueries'}>Queries</NavLink></li>
-      <li><NavLink to={'/otherRecommendation'}>Recommendation For Me</NavLink></li>
-      <li><NavLink to={`/myQueries`} >My Queries</NavLink></li>
-      <li><NavLink to={`/myRecommendation`} >My Recommendation</NavLink></li>
+     
+    <li className="mr-2"><NavLink to={'/'}  >Home</NavLink></li>
+    <li className="mr-2"><NavLink to={'/allQueries'}>Queries</NavLink></li>
+     
+     
+     {user?.email && (
+       <>
+        
+      <li className="mr-2"><NavLink to={'/otherRecommendation'}>Recommendation For Me</NavLink></li>
+      <li className="mr-2"><NavLink to={`/myQueries`} >My Queries</NavLink></li>
+      <li className="mr-2"><NavLink to={`/myRecommendation`} >My Recommendation</NavLink></li>
+       
+       
+       </>
+     )}
+
+
+
+
 
       
      

@@ -89,7 +89,7 @@ const RecommendationForm = ({query} ) => {
             name="recommendationTitle"
            
             placeholder="Enter recommendation title"
-            className="mt-1 block w-full border-light rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+            className="w-full px-4 py-2 border border-light rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
@@ -107,7 +107,7 @@ const RecommendationForm = ({query} ) => {
             name="recommendationProductName"
             
             placeholder="Enter product name"
-            className="mt-1 block w-full border-light rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+            className="w-full px-4 py-2 border border-light rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
@@ -125,7 +125,7 @@ const RecommendationForm = ({query} ) => {
             name="productImage"
             
             placeholder="Enter product image URL"
-            className="mt-1 block w-full border-light rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+            className="w-full px-4 py-2 border border-light rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
@@ -142,7 +142,7 @@ const RecommendationForm = ({query} ) => {
             name="recommendationReason"
        
             placeholder="Enter the reason for your recommendation"
-            className="mt-1 block w-full border-light rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+            className="w-full px-4 py-2 border border-light rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
           ></textarea>
         </div>
 
