@@ -72,7 +72,7 @@ const UpdateQuery = ()=> {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+  
 
     axiosSecurity.patch(`/update-query/${id}`, formData)
     .then(res => {

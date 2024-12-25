@@ -38,10 +38,20 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[50] mt-3 w-52 p-2 shadow">
-        <li><NavLink to={'/'}>Home</NavLink></li>
-      <li><NavLink to={'/allProduct'}>All Equipment</NavLink></li>
-      <li><NavLink to={'/addProduct'}>Add Equipment</NavLink></li>
-      <li><NavLink to={`/myProduct`}>My Equipment</NavLink></li>
+       <li className="mr-2"><NavLink to={'/'}  >Home</NavLink></li>
+    <li className="mr-2"><NavLink to={'/allQueries'}>Queries</NavLink></li>
+     
+     
+     {user?.email && (
+       <>
+        
+      <li className="mr-2"><NavLink to={'/otherRecommendation'}>Recommendation For Me</NavLink></li>
+      <li className="mr-2"><NavLink to={`/myQueries`} >My Queries</NavLink></li>
+      <li className="mr-2"><NavLink to={`/myRecommendation`} >My Recommendation</NavLink></li>
+       
+       
+       </>
+     )}
 
       </ul>
     </div>

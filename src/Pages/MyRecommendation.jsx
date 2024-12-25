@@ -34,7 +34,7 @@ const MyRecommendation = () => {
         if (result.isConfirmed) {
           
 
-        axios.delete(`http://localhost:5000/delete-recommendation/${id}`)
+        axios.delete(`https://cervinae-server.vercel.app/delete-recommendation/${id}`)
         .then(res=>{if(res.data.deletedCount>0){
             Swal.fire({
             title: "Deleted!",
@@ -46,7 +46,7 @@ const MyRecommendation = () => {
             (recommendation) => recommendation.id !== id
           );
           setRecommendations(filteredRecommendations);
-          console.log(filteredRecommendations);
+         
 
         }})
         }

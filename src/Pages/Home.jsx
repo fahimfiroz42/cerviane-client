@@ -18,7 +18,7 @@ const Home = () => {
 
 
     const fetchdata=async()=>{
-        const {data}=await axios.get(`http://localhost:5000/recent-queries`) 
+        const {data}=await axios.get(`https://cervinae-server.vercel.app/recent-queries`) 
         setAllQueries(data)
        
     

@@ -57,15 +57,16 @@ const AuthContextProvider = ({children}) => {
         const unsubscribe=onAuthStateChanged(auth,currentUser=>{
             if(currentUser){
                 setUser(currentUser)
-                axios.post('http://localhost:5000/jwt',currentUser?.email,{withCredentials:true})
+                axios.post('https://cervinae-server.vercel.app/jwt',{email:currentUser?.email},{withCredentials:true})
                 .then(res=>console.log(res.data))
+
 
                 setLoading(false)
                 
             }
             else{
                 setUser(null)
-                axios.get('http://localhost:5000/logout',{withCredentials:true})
+                axios.get('https://cervinae-server.vercel.app/logout',{withCredentials:true})
                 setLoading(false)
             }
            

@@ -18,7 +18,7 @@ const AllQueries = () => {
    }, [ search])
 
    const fetchdata=async()=>{
-    const {data}=await axios.get(`http://localhost:5000/all-queries?search=${search}`) 
+    const {data}=await axios.get(`https://cervinae-server.vercel.app/all-queries?search=${search}`) 
     setMyQueries(data)
    
 
@@ -62,7 +62,7 @@ const AllQueries = () => {
 
             </div>
 
-            <div className="flex justify-between items-center mt-20 border border-b-4 border-b-primary/30 py-4 px-2 rounded-2xl ">
+            <div className="flex flex-col gap-2 md:flex-row justify-between items-center mt-20 border border-b-4 border-b-primary/30 py-4 px-2 rounded-2xl ">
 
                 {/* search button */}
                 <div>

@@ -41,8 +41,8 @@ const RecommendationForm = ({query} ) => {
     }
 
 
-    try {
-        axios.post('http://localhost:5000/add-recommendation', formData)
+  
+        axios.post('https://cervinae-server.vercel.app/add-recommendation', formData)
         .then(res=>{
             if(res.data.insertedId){
                 Swal.fire({
@@ -54,11 +54,19 @@ const RecommendationForm = ({query} ) => {
                 }
             }
     )
-    } catch (error) {
-        console.log(error);
-
+     .catch (error=>{
         
-    }
+        Swal.fire({
+            title: 'Error',
+            text: error.response.data.message,
+            icon: 'error',
+            confirmButtonText: 'ok'
+        })
+       
+
+     }) 
+
+        form.reset();
     
   };
 

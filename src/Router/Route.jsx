@@ -14,6 +14,7 @@ import MyRecommendation from "../Pages/MyRecommendation";
 import RecommendationForMe from "../Pages/RecommendationForMe";
 import AllQueries from "../Pages/AllQueries";
 import UpdateQuery from "../Pages/UpdateQuery";
+import PrivateRoute from "../PrivateRoute/PrivteRoute";
 
 
 
@@ -45,12 +46,12 @@ const Route =createBrowserRouter([
        },
        {
         path:'/addQueries',
-        element:<AddQueries/>
+        element:<PrivateRoute><AddQueries/></PrivateRoute>
 
        },
        {
         path:'/myQueries',
-        element:<MyQueries/>
+        element:<PrivateRoute><MyQueries/></PrivateRoute>
        },
        {
         path:'/queryDetails/:id',
@@ -58,15 +59,15 @@ const Route =createBrowserRouter([
        },
        {
         path:'/myRecommendation',
-        element:<MyRecommendation/>
+        element:<PrivateRoute><MyRecommendation/></PrivateRoute>
        },
        {
         path:'/otherRecommendation',
-        element:<RecommendationForMe/>
+        element:<PrivateRoute><RecommendationForMe/></PrivateRoute>
        },
        {
         path:'/updateQuery/:id',
-        element:<UpdateQuery/>
+        element:<PrivateRoute><UpdateQuery/></PrivateRoute>
        }
     
     

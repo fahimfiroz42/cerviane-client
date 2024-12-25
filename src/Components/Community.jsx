@@ -28,7 +28,8 @@ const CommunitySection = () => {
   ];
 
   return (
-    <section className="bg-secondary py-12">
+   <div className="bg-secondary ">
+     <div className="bg-secondary py-12 w-11/12 mx-auto">
       {/* Section Header */}
       <div className="text-center mb-8 animate-fadeIn">
         <h2 className="text-3xl font-bold text-dark">
@@ -69,7 +70,8 @@ const CommunitySection = () => {
           </div>
         ))}
       </div>
-    </section>
+    </div>
+   </div>
   );
 };
 

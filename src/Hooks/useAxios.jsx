@@ -4,7 +4,7 @@ import { AuthContext } from "../AuthPovider/AuthPovider";
 import { useNavigate } from "react-router-dom";
 
  const axiosSecurity=axios.create({
-    baseURL:'http://localhost:5000',
+    baseURL:'https://cervinae-server.vercel.app',
     withCredentials:true,
 
 })

@@ -16,7 +16,7 @@ const AllQueriesCard = ({query}) => {
     date,
     recommendationCount 
   } = query || {};
-console.log(productImageURL);
+
   return (
     <div className=" bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-4">
       {/* Full-Width Product Image */}
