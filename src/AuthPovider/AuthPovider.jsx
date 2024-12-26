@@ -66,7 +66,7 @@ const AuthContextProvider = ({children}) => {
             }
             else{
                 setUser(null)
-                axios.get('https://cervinae-server.vercel.app/logout',{withCredentials:true})
+                axios.post('https://cervinae-server.vercel.app/logout',{},{withCredentials:true})
                 setLoading(false)
             }
            

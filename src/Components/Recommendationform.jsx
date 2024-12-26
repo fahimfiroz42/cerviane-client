@@ -4,9 +4,11 @@ import { format } from "date-fns";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import useAxios from "../Hooks/useAxios";
 
 const RecommendationForm = ({query} ) => {
   const navigate=useNavigate()
+  const axiosSecurity=useAxios()
 
     const {user}=useContext(AuthContext)
     const {
@@ -44,7 +46,7 @@ const RecommendationForm = ({query} ) => {
 
 
   
-        axios.post('https://cervinae-server.vercel.app/add-recommendation', formData)
+        axiosSecurity.post('/add-recommendation', formData)
         .then(res=>{
             if(res.data.insertedId){
                 Swal.fire({
