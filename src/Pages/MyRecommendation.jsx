@@ -103,7 +103,7 @@ const MyRecommendation = () => {
       <div className="mt-8"></div>
 
       {/* Recommendations List */}
-      <div className="container mx-auto p-4 sm:p-6 bg-light rounded-lg shadow-md border border-gray-200">
+      <div className="container mx-auto mb-28 p-4 sm:p-6 bg-light rounded-lg shadow-md border border-gray-200">
         <h2 className="text-lg sm:text-2xl font-semibold mb-4 text-dark">
           Recommendations <span className="badge bg-primary/30">{recommendations.length}</span>
         </h2>

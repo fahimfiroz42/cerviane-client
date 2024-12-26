@@ -5,11 +5,12 @@ import Lottie from "lottie-react";
 import ques from '../assets/ques.json';
 import Swal from "sweetalert2";
 import useAxios from "../Hooks/useAxios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useTitle from "../Hooks/useTitle";
 
 const UpdateQuery = () => {
     useTitle('Update Query')
+    const navigate = useNavigate();
   const { id } = useParams();
   const { user } = useContext(AuthContext);
   const axiosSecurity = useAxios();
@@ -36,8 +37,7 @@ const UpdateQuery = () => {
       photo: user?.photoURL
     },
     recommendationCount: '',
-    date: format(new Date(), 'dd-MM-yyyy'),
-    time: format(new Date(), 'HH:mm:ss'),
+   
   });
 
   useEffect(() => {
@@ -49,9 +49,8 @@ const UpdateQuery = () => {
         productImageURL: myQueries.productImageURL || "",
         queryTitle: myQueries.queryTitle || "",
         boycottingReason: myQueries.boycottingReason || "",
-        recommendationCount: myQueries.recommendationCount || 0,
-        date: myQueries.date || format(new Date(), 'dd-MM-yyyy'),
-        time: myQueries.time || format(new Date(), 'HH:mm:ss'),
+        recommendationCount: myQueries.recommendationCount || 0
+    
       }));
     }
   }, [myQueries]);
@@ -77,6 +76,8 @@ const UpdateQuery = () => {
             confirmButtonText: 'OK'
           });
         }
+
+        navigate('/myQueries');
       });
   };
 
