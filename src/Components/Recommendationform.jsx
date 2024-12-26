@@ -3,8 +3,10 @@ import { AuthContext } from "../AuthPovider/AuthPovider";
 import { format } from "date-fns";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const RecommendationForm = ({query} ) => {
+  const navigate=useNavigate()
 
     const {user}=useContext(AuthContext)
     const {
@@ -52,7 +54,10 @@ const RecommendationForm = ({query} ) => {
                     confirmButtonText: 'ok'
                   })
                 }
+                navigate('/myRecommendation')
             }
+
+            
     )
      .catch (error=>{
         

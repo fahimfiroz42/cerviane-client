@@ -6,8 +6,10 @@ import ques from '../assets/ques.json';
 import Swal from "sweetalert2";
 import useAxios from "../Hooks/useAxios";
 import useTitle from "../Hooks/useTitle";
+import { useNavigate } from "react-router-dom";
 
 const AddQueries = () => {
+  const navigate=useNavigate()
   useTitle('Add Query')
   const { user } = useContext(AuthContext);
   const axiosSecurity = useAxios();
@@ -48,6 +50,8 @@ const AddQueries = () => {
             confirmButtonText: "OK",
           });
         }
+
+        navigate('/myQueries')
       });
   };
 

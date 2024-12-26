@@ -3,7 +3,6 @@ import { AuthContext } from "../AuthPovider/AuthPovider";
 import { format } from "date-fns";
 import Lottie from "lottie-react";
 import ques from '../assets/ques.json';
-import axios from "axios";
 import Swal from "sweetalert2";
 import useAxios from "../Hooks/useAxios";
 import { useParams } from "react-router-dom";

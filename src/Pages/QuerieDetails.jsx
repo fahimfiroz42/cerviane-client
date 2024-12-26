@@ -6,6 +6,7 @@ import axios from "axios";
 import useAxios from "../Hooks/useAxios";
 import { ThumbsUp, Calendar, Clock, AlertCircle } from 'lucide-react'
 import useTitle from "../Hooks/useTitle";
+import { format } from "date-fns";
 
 
 const QuerieDetails = () => {
@@ -43,6 +44,8 @@ const QuerieDetails = () => {
         time,
         querier
       } = myQueries ||{};
+
+  
     
       return (
        <div className="">
@@ -50,14 +53,14 @@ const QuerieDetails = () => {
 
 
 
-<div className="w-11/12 my-20 mx-auto p-6 bg-secondary rounded-2xl shadow-lg">
+<div className="w-11/12 my-20 mx-auto p-6 bg-white rounded-2xl shadow-lg">
       <div className="grid md:grid-cols-2 gap-8">
         {/* Product Image Section */}
         <div className="relative">
           <img 
             src={productImageURL} 
             alt={productName}
-            className="w-full h-[400px] object-cover rounded-xl shadow-md"
+            className="w-full h-[400px] object-contain rounded-xl shadow-md"
           />
           <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full shadow-md">
             <div className="flex items-center gap-2">
@@ -78,11 +81,11 @@ const QuerieDetails = () => {
               <div className="flex flex-col items-end">
                 <div className="flex items-center gap-2 text-gray-500">
                   <Calendar className="w-4 h-4" />
-                  <span className="text-sm">{date}</span>
+                  <span className="text-sm">{date && format(new Date(date), 'P')}</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-500 mt-1">
                   <Clock className="w-4 h-4" />
-                  <span className="text-sm">{time}</span>
+                  <span className="text-sm">{date && format(new Date(date), 'p')}</span>
                 </div>
               </div>
             </div>

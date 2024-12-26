@@ -4,7 +4,7 @@ const Collaborate = () => {
     return (
         <div className="min-h-screen bg-secondary p-8 m">
         <div className="w-11/12 mx-auto">
-        <div className="max-w-7xl mx-auto ">
+        <div className=" mx-auto ">
           {/* Header */}
           <div className="flex items-center gap-2 mb-4">
             <img src="https://i.ibb.co.com/P6H1zNF/comments.png" alt="Logo" className="w-12 h-12" />

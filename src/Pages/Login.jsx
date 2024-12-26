@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Swal from 'sweetalert2'
 
@@ -15,7 +15,7 @@ import useTitle from "../Hooks/useTitle";
 
 const Login = () => {
   useTitle('Login')
-  const location=useLocation()
+ 
   const navigate =useNavigate()
   const [email, setEmail] = useState('')
   
@@ -32,7 +32,7 @@ const Login = () => {
             icon: 'success',
             confirmButtonText: 'ok'
           })
-          navigate(location?.state? location.state:'/')
+          navigate('/')
     })
        .catch(error=>Swal.fire({
         title: 'Error!',
@@ -60,7 +60,7 @@ const Login = () => {
             icon: 'success',
             confirmButtonText: 'ok'
           })
-          navigate(location?.state? location.state:'/')
+          navigate('/')
     })
 
     
@@ -78,9 +78,7 @@ const Login = () => {
 
   }
 
-  const handleForgotPassword = () => {
-    navigate("/resetpassword", { state: { email } });
-  };
+  
 
 
 
@@ -120,7 +118,7 @@ const Login = () => {
 
              
           <label className="label">
-            <button    onClick={handleForgotPassword} className="label-text-alt link link-hover">Forgot password?</button>
+            <button     className="label-text-alt link link-hover">Forgot password?</button>
           </label>
         </div>
         <div className="form-control mt-6 text-center space-y-3">

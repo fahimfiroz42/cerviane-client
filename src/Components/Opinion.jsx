@@ -4,7 +4,7 @@ const OpinionSection = () => {
   return (
    <div className=" bg-secondary">
      <div className="relative w-11/12 mx-auto  bg-secondary py-12">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2  gap-8 items-center">
+      <div className=" mx-auto grid grid-cols-1 lg:grid-cols-2  gap-8 items-center">
         {/* Text Content */}
         <div className="text-center lg:text-left">
           <div className="flex justify-center lg:justify-start mb-4">

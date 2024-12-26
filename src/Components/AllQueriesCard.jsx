@@ -1,5 +1,6 @@
 
 
+import { format } from 'date-fns';
 import { FaThumbsUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -58,7 +59,7 @@ const AllQueriesCard = ({query}) => {
         />
         <div>
           <p className="text-sm font-semibold text-dark">{querier?.name}</p>
-          <p className="text-xs text-gray-500">{date}  </p>
+          <p className="text-xs text-gray-500">{date && format(new Date(date), 'PPPP')}  </p>
         </div>
       </div>
 

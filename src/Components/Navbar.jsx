@@ -38,16 +38,16 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[50] mt-3 w-52 p-2 shadow">
-       <li className="mr-2"><NavLink to={'/'}  >Home</NavLink></li>
-    <li className="mr-2"><NavLink to={'/allQueries'}>Queries</NavLink></li>
+       <li ><NavLink to={'/'}  >Home</NavLink></li>
+    <li ><NavLink to={'/allQueries'}>Queries</NavLink></li>
      
      
      {user?.email && (
        <>
         
-      <li className="mr-2"><NavLink to={'/otherRecommendation'}>Recommendation For Me</NavLink></li>
-      <li className="mr-2"><NavLink to={`/myQueries`} >My Queries</NavLink></li>
-      <li className="mr-2"><NavLink to={`/myRecommendation`} >My Recommendation</NavLink></li>
+      <li ><NavLink to={'/otherRecommendation'}>Recommendation For Me</NavLink></li>
+      <li><NavLink to={`/myQueries`} >My Queries</NavLink></li>
+      <li><NavLink to={`/myRecommendation`} >My Recommendation</NavLink></li>
        
        
        </>
@@ -57,21 +57,21 @@ const Navbar = () => {
     </div>
     <p className="font-bold text-2xl "><span className="text-primary">PROD</span>ASK</p>
     
-    <img src={logo} alt="" className="w-10 h-10" />
+    <img src={logo} alt="" className="w-10 h-10 hidden md:block" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-md font-bold text-gray-400">
      
-    <li className="mr-2"><NavLink to={'/'}  >Home</NavLink></li>
-    <li className="mr-2"><NavLink to={'/allQueries'}>Queries</NavLink></li>
+    <li className=""><NavLink className={({ isActive }) => (isActive ? " text-primary" : "")}  to={'/'}  >Home</NavLink></li>
+    <li className=""><NavLink  to={'/allQueries'} className={({ isActive }) => (isActive ? " text-primary" : "")}>Queries</NavLink></li>
      
      
      {user?.email && (
        <>
         
-      <li className="mr-2"><NavLink to={'/otherRecommendation'} >Recommendation For Me</NavLink></li>
-      <li className="mr-2"><NavLink to={`/myQueries`} >My Queries</NavLink></li>
-      <li className="mr-2"><NavLink to={`/myRecommendation`} >My Recommendation</NavLink></li>
+      <li className=""><NavLink  to={'/otherRecommendation'} className={({ isActive }) => (isActive ? "text-primary" : "")} >Recommendation For Me</NavLink></li>
+      <li className=""><NavLink to={`/myQueries`} className={({ isActive }) => (isActive ? "text-primary" : "")} >My Queries</NavLink></li>
+      <li className=""><NavLink to={`/myRecommendation`} className={({ isActive }) => (isActive ? "text-primary" : "")} >My Recommendation</NavLink></li>
        
        
        </>

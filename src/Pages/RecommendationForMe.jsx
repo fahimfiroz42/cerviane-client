@@ -66,7 +66,7 @@ const RecommendationForMe = () => {
       <div className="mt-8"></div>
 
       {/* Recommendations Section */}
-      <div className="container mx-auto p-4 md:p-6 bg-secondary rounded-lg shadow-md border border-gray-200">
+      <div className="container mx-auto p-4 md:p-6 bg-secondary rounded-lg shadow-md border border-gray-200 mb-20">
         <h2 className="text-xl md:text-2xl font-semibold text-dark mb-4">
           Recommendations <span className="badge bg-primary/30">{recommendations.length}</span>
         </h2>
