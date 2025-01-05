@@ -57,7 +57,7 @@ const Collaborate = () => {
               </div>
             </div>
             <div className="md:w-1/2">
-              <h2 className="text-4xl font-bold mb-4 text-dark">
+              <h2 className="text-4xl font-bold mb-5 text-dark">
                 Giving Someone A Gift Has Never Been Easier,
                 <span className="block text-primary">Join Our Community</span>
               </h2>
