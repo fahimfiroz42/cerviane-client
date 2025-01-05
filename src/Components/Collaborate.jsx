@@ -2,7 +2,7 @@
 
 const Collaborate = () => {
     return (
-        <div className="min-h-screen bg-secondary p-8 m">
+        <div className="min-h-screen bg-secondary p-8 ">
         <div className="w-11/12 mx-auto">
         <div className=" mx-auto ">
           {/* Header */}
