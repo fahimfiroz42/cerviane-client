@@ -16,6 +16,8 @@ import AllQueries from "../Pages/AllQueries";
 import UpdateQuery from "../Pages/UpdateQuery";
 import PrivateRoute from "../PrivateRoute/PrivteRoute";
 import AboutUs from "../Pages/AboutUs";
+import FAQ from "../Pages/FAQ";
+import ContactUs from "../Pages/ContactUs";
 
 
 
@@ -73,6 +75,14 @@ const Route =createBrowserRouter([
        {
         path:'/aboutus',
         element:<AboutUs/>
+       },
+       {
+        path:'/faq',
+        element:<FAQ/>
+       },
+       {
+       path:'/contactus',
+       element:<ContactUs/> 
        }
     
     

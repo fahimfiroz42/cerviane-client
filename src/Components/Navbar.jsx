@@ -65,6 +65,8 @@ const Navbar = () => {
     <li className=""><NavLink className={({ isActive }) => (isActive ? " text-primary" : "")}  to={'/'}  >Home</NavLink></li>
     <li className=""><NavLink  to={'/allQueries'} className={({ isActive }) => (isActive ? " text-primary" : "")}>Queries</NavLink></li>
     <li className=""><NavLink  to={'/aboutus'} className={({ isActive }) => (isActive ? " text-primary" : "")}>About Us</NavLink></li>
+    <li className=""><NavLink  to={'/faq'} className={({ isActive }) => (isActive ? " text-primary" : "")}>FAQ</NavLink></li>
+    <li className=""><NavLink  to={'/contactus'} className={({ isActive }) => (isActive ? " text-primary" : "")}>Contact</NavLink></li>
      
      
      {user?.email && (
