@@ -40,6 +40,9 @@ const Navbar = () => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[50] mt-3 w-52 p-2 shadow">
        <li ><NavLink to={'/'}  >Home</NavLink></li>
     <li ><NavLink to={'/allQueries'}>Queries</NavLink></li>
+    <li ><NavLink to={'/aboutus'}>About Us</NavLink></li>
+    <li ><NavLink to={'/faq'}>FAQ</NavLink></li>
+    <li ><NavLink to={'/contactus'}>Contact</NavLink></li>
      
      
      {user?.email && (
