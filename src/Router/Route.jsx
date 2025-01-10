@@ -15,6 +15,7 @@ import RecommendationForMe from "../Pages/RecommendationForMe";
 import AllQueries from "../Pages/AllQueries";
 import UpdateQuery from "../Pages/UpdateQuery";
 import PrivateRoute from "../PrivateRoute/PrivteRoute";
+import AboutUs from "../Pages/AboutUs";
 
 
 
@@ -68,6 +69,10 @@ const Route =createBrowserRouter([
        {
         path:'/updateQuery/:id',
         element:<PrivateRoute><UpdateQuery/></PrivateRoute>
+       },
+       {
+        path:'/aboutus',
+        element:<AboutUs/>
        }
     
     
