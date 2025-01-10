@@ -3,11 +3,11 @@ import { Users, Target, Award, ArrowRight } from 'lucide-react';
 
 const AboutUs = () => {
     return (
-        <div className="min-h-screen bg-secondary">
+        <div className=" min-h-screen bg-secondary">
         {/* Hero Section */}
-        <div className="relative h-[400px] bg-primary">
-          <div className="absolute inset-0 bg-dark/20"></div>
-          <div className="relative container mx-auto px-6 h-full flex items-center">
+        <div className="relative h-[400px] bg-primary ">
+          <div className=" absolute inset-0 bg-dark/20"></div>
+          <div className="relative w-11/12  mx-auto px-6 h-full flex items-center">
             <div className="text-white max-w-2xl">
               <h1 className="text-5xl font-bold mb-4">Our Story</h1>
               <p className="text-xl opacity-90">Crafting exceptional shopping experiences since 1995. We're more than just an ecommerce platform - we're your trusted partner in quality and style.</p>
@@ -17,7 +17,7 @@ const AboutUs = () => {
   
         {/* Mission Statement */}
         <div className="py-20 bg-light">
-          <div className="container mx-auto px-6">
+          <div className="w-11/12 mx-auto px-6">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-8 text-dark">Our Mission</h2>
               <p className="text-xl text-dark/80 leading-relaxed">
@@ -29,7 +29,7 @@ const AboutUs = () => {
   
         {/* Values Section */}
         <div className="py-20 bg-secondary">
-          <div className="container mx-auto px-6">
+          <div className="w-11/12 mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-16 text-dark">Our Core Values</h2>
             <div className="grid md:grid-cols-3 gap-12">
               {[
@@ -61,7 +61,7 @@ const AboutUs = () => {
   
         {/* Team Section */}
         <div className="py-20 bg-light">
-          <div className="container mx-auto px-6">
+          <div className="w-11/12 mx-auto ">
             <h2 className="text-3xl font-bold text-center mb-16 text-dark">Meet Our Leadership</h2>
             <div className="grid md:grid-cols-3 gap-12">
               {[
@@ -97,7 +97,7 @@ const AboutUs = () => {
   
         {/* Company Stats */}
         <div className="py-20 bg-primary text-white">
-          <div className="container mx-auto px-6">
+          <div className="w-11/12 mx-auto px-6">
             <div className="grid md:grid-cols-4 gap-12 text-center">
               {[
                 { number: "25+", label: "Years of Excellence" },
@@ -116,7 +116,7 @@ const AboutUs = () => {
   
         {/* CTA Section */}
         <div className="py-20 bg-secondary">
-          <div className="container mx-auto px-6 text-center">
+          <div className="w-11/12 mx-auto px-6 text-center">
             <h2 className="text-3xl font-bold mb-8 text-dark">Join Our Journey</h2>
             <p className="text-xl text-dark/70 mb-8 max-w-2xl mx-auto">
               Be part of our story as we continue to revolutionize the future of online shopping.
