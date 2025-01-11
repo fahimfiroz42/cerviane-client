@@ -7,6 +7,7 @@ import OpinionSection from "../Components/Opinion";
 import Collaborate from "../Components/Collaborate";
 import HowCanHelp from "../Components/HowCanHelp";
 import useTitle from "../Hooks/useTitle";
+import ProductPromotion from "../Components/ProductPromotion";
 
 
 const Home = () => {
@@ -37,6 +38,7 @@ const Home = () => {
             <CommunitySection/>
             <OpinionSection />
             <Collaborate />
+            <ProductPromotion/>
             <HowCanHelp />
             
         </div>
