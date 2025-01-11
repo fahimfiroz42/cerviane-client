@@ -1,6 +1,7 @@
 
 import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
@@ -111,9 +112,10 @@ const FAQ = () => {
             <p className="text-dark/70 mb-6">
               Can't find the answer you're looking for? Please chat with our friendly team.
             </p>
-            <button className="px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors">
+           <Link to="/contactus"> <button className="px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors">
               Contact Support
             </button>
+            </Link>
           </div>
     </div>
   );
