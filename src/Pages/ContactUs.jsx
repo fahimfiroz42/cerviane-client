@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 const ContactUs = () => {
     const [formData, setFormData] = useState({
@@ -11,8 +12,16 @@ const ContactUs = () => {
     
       const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission logic here
-        console.log('Form submitted:', formData);
+        if(formData){
+          Swal.fire({
+            title: 'Message Sent Successfully',
+            text: 'Your message has been sent. We will get back to you soon.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          })
+         
+        }
+       
       };
     
       const handleChange = (e) => {
