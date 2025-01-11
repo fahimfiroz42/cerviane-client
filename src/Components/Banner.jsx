@@ -39,7 +39,7 @@ const Banner = () => {
                     <p className="animate__animated animate__fadeInRight text-sm sm:text-base md:text-lg lg:text-xl text-white/90">
                       {slider.description}
                     </p>
-                    <Link to={slider.link}>
+                    <Link to={'/'}>
                       <button className="animate__animated animate__fadeInUp px-6 py-3 text-white rounded-lg mt-4 sm:mt-6 font-medium transition-all duration-300 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-purple-600 hover:to-indigo-500">
                         {slider.buttonText}
                       </button>
