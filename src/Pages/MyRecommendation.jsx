@@ -5,6 +5,8 @@ import useAxios from "../Hooks/useAxios";
 import Swal from "sweetalert2";
 import Loader from "../Components/Loader";
 import useTitle from "../Hooks/useTitle";
+import { useNavigate } from "react-router-dom";
+
 
 const MyRecommendation = () => {
     useTitle('My Recommendation')
@@ -12,6 +14,7 @@ const MyRecommendation = () => {
   const { user } = useContext(AuthContext);
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
@@ -92,7 +95,7 @@ const MyRecommendation = () => {
               <span className="font-bold">{user?.displayName}</span>, see all the recommendations you
               have made. You can manage them easily here.
             </p>
-            <button className="mt-5 px-6 py-3 bg-white text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+            <button onClick={()=> navigate('/myQueries')} className="mt-5 px-6 py-3 bg-white text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
               Add New Recommendation
             </button>
           </div>

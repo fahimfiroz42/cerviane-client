@@ -1,9 +1,25 @@
 import { MessageCircle, ThumbsUp, Calendar } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 const CommentCard = ({recommendation}) => {
 
     const {productImage,RecommenderName,recommendationProductName, recommendationTitle,recommendationReason,date}=recommendation||{}
-   
+     const handleThumbsUp = () => {
+       Swal.fire({
+         icon: 'success',
+         title: 'Your Recommendation has been liked',
+         showConfirmButton: false,
+         timer: 1500
+       });
+     }
+     const handleReply = () => {
+       Swal.fire({
+         icon: 'success',
+         title: 'Your Recommendation has been replied',
+         showConfirmButton: false,
+         timer: 1500
+       });
+     }
 
   return (
 
@@ -48,11 +64,11 @@ const CommentCard = ({recommendation}) => {
 
               {/* Actions */}
               <div className="mt-4 flex items-center space-x-4">
-                <button className="flex items-center text-gray-500 hover:text-blue-600 transition-colors">
+                <button onClick={handleThumbsUp} className="flex items-center text-gray-500 hover:text-blue-600 transition-colors">
                   <ThumbsUp className="w-5 h-5 mr-1" />
                   <span>Helpful</span>
                 </button>
-                <button className="text-gray-500 hover:text-blue-600 transition-colors">
+                <button onClick={handleReply} className="text-gray-500 hover:text-blue-600 transition-colors">
                   Reply
                 </button>
               </div>
