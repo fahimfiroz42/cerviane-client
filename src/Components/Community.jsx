@@ -5,7 +5,7 @@ const CommunitySection = () => {
   // JSON array for cards
   const cards = [
     {
-      title: "Contribute With Your Opinion",
+      title: "Contribute With Your Opinion About A Product",
       description: "Share your valuable insights with the community.",
       icon: <FaPenAlt className="text-4xl text-primary mb-4" />,
       image: "https://via.placeholder.com/150",

@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthPovider/AuthPovider";
+import { useContext } from "react";
 
 
 const Collaborate = () => {
+  const {user}=useContext(AuthContext)
     return (
         <div className="min-h-screen bg-secondary p-8 ">
         <div className="w-11/12 mx-auto">
@@ -20,9 +24,21 @@ const Collaborate = () => {
               <p className="text-gray-600 mb-8">
                 Share your valuable insights with the community.Make informed decisions based on what others think.And Make a Difference with Your Opinion. 
               </p>
-              <button className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all">
+            {
+              user?.email?<>
+              <Link to={'/'}><button className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all">
+                Expore Now
+              </button>
+              </Link> 
+              </>:<>
+               <Link to="/login"><button className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all">
                 I Want To Sign Up
               </button>
+              </Link>
+              </>
+            }
+
+             
             </div>
             <div className="md:w-1/2 relative">
               <div className="relative">
@@ -64,9 +80,10 @@ const Collaborate = () => {
               <p className="text-gray-600 mb-8">
                 You can now send gifts to your loved ones and make them happy.Exciting gifts are waiting for you.So be quick and grab them.
               </p>
-              <button className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all">
+              <Link to={'/allQueries'}><button className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all">
                 View Reviews
               </button>
+              </Link>
             </div>
           </div>
         </div>
