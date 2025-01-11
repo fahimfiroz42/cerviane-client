@@ -1,4 +1,4 @@
-import React from "react";
+import {Link} from 'react-router-dom'
 
 const OpinionSection = () => {
   return (
@@ -30,9 +30,11 @@ const OpinionSection = () => {
             perspectives, and honest reviews. Your opinion matters, and it can
             help others make better choices.
           </p>
-          <button className="mt-6 px-6 py-3 bg-gradient-to-r from-primary to-light text-white rounded-lg font-medium hover:opacity-90 transition">
+          <Link to={"/allQueries"}><button className="mt-6 px-6 py-3 bg-gradient-to-r from-primary to-light text-white rounded-lg font-medium hover:opacity-90 transition">
             View Reviews
           </button>
+
+          </Link>
         </div>
 
         {/* Image Content */}

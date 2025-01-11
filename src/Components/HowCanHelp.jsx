@@ -1,5 +1,6 @@
 
 import { ThumbsUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const HowCanHelp = () => {
     return (
@@ -22,9 +23,10 @@ const HowCanHelp = () => {
                 By taking a few minutes to answer a few questions, you can help others.
               </p>
             </div>
-            <button className="bg-primary hover:bg-primary/20 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200">
+            <Link to="/login"><button className="bg-primary hover:bg-primary/80 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200">
               Sign Up Now
             </button>
+            </Link>
           </div>
         </div>
       </div>
