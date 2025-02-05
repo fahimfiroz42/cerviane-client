@@ -64,6 +64,21 @@
 
 
 
+## 🚀 How to Run Locally
+
+1. **Clone the repository:**
+   ```bash
+   git clone [repository_url]
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+3. **Start the development server:**
+   ```bash
+   npm run dev
+
+
+
 ## Live Link 🔴
 
 **([PRODASK: **https://cerviane.web.app/**](https://cerviane.web.app/))**
