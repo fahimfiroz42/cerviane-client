@@ -6,7 +6,7 @@ const HowCanHelp = () => {
     return (
         <div className='bg-secondary'>
              <div className=" bg-secondary w-11/12 mx-auto">
-      <div className=" mx-auto  px-4 sm:px-6 lg:px-8 py-12">
+      <div className=" mx-auto  px-4 sm:px-6 lg:px-0 py-12">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="flex items-center flex-col md:flex-row gap-8 p-8">
             <div className="bg-custom-light rounded-full p-4">
