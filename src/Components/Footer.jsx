@@ -15,7 +15,7 @@ const Footer = () => {
       <span className='text-gray-500 text-lg'>We make your online life easier</span>
 
     </p>
-    <h6 className="footer-title opacity-100 text-black">Social Link</h6>
+    <h6 className="footer-title  text-black  ">Social Link</h6>
     <div className="grid grid-flow-col gap-4">
       <a href='https://x.com/fahim_farsi1'>
         <svg
@@ -74,7 +74,7 @@ const Footer = () => {
   </nav>
 </footer>
 
-<footer className="footer footer-center bg-secondary  text-base-content p-4">
+<footer className="footer footer-center bg-secondary  text-md font-bold text-gray-400 p-4 ">
   <aside>
     <p>Copyright © {new Date().getFullYear()} - All right reserved by KNULL Industries Ltd</p>
   </aside>
