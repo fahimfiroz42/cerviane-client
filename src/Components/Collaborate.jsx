@@ -6,7 +6,7 @@ import { useContext } from "react";
 const Collaborate = () => {
   const {user}=useContext(AuthContext)
     return (
-        <div className="min-h-screen bg-secondary p-8 ">
+        <div className="min-h-screen bg-secondary py-8">
         <div className="w-11/12 mx-auto">
         <div className=" mx-auto ">
           {/* Header */}
