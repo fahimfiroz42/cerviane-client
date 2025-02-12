@@ -5,7 +5,7 @@ import logo from '../../public/question.png'
 const Footer = () => {
     return (
         <div className="bg-secondary">
-            <footer className="footer bg-secondary w-11/12 mx-auto  p-10">
+            <footer className="footer bg-secondary w-11/12 mx-auto  py-10">
   <aside>
     
     <p className="font-bold text-xl">
