@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ProductPromotion = () => {
     return (
         <div className="min-h-screen bg-[rgb(248,250,255)] py-16">
-      <div className="w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-11/12 mx-auto px-4 sm:px-6 lg:px-0">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-3xl md:text-4xl font-bold text-[#05264E] mb-6">
