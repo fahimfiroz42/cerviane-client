@@ -76,7 +76,7 @@ const ProductPromotion = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {['30-Day Trial', 'No Credit Card', '24/7 Support', 'Money Back'].map((item) => (
               <div key={item} className="bg-primary/10 p-4 rounded-lg">
-                <p className="font-semibold text-primary">{item}</p>
+                <p className="font-semibold text-primary text-xl">{item}</p>
               </div>
             ))}
           </div>
