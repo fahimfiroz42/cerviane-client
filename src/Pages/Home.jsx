@@ -39,6 +39,7 @@ const Home = () => {
             <OpinionSection />
             <Collaborate />
             <ProductPromotion/>
+            {/* this is how can help */}
             <HowCanHelp />
             
         </div>
