@@ -33,6 +33,7 @@ const Home = () => {
 
     return (
         <div>
+            {/* banner image */}
             <Banner/>
             <RecentQuerys  allQueries={allQueries}/>
             <CommunitySection/>
