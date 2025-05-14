@@ -56,6 +56,7 @@ const Navbar = () => {
        </>
      )}
 
+{/* some links */}
       </ul>
     </div>
     <p className="font-bold text-2xl "><span className="text-primary">PROD</span>ASK</p>
